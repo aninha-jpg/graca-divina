@@ -1,0 +1,123 @@
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: #FAF7F0;
+  font-family: 'DM Sans', sans-serif;
+  color: #39352E;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 36px;
+  background: #FFFEFA;
+  border: 1px solid #E8E0D1;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.login-card h1 {
+  margin: 0 0 8px;
+  color: #39352E;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.login-subtitle {
+  margin: 0 0 25px;
+  color: #827B70;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-card input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #E8E0D1;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #39352E;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.login-card input::placeholder {
+  color: #A49C8F;
+}
+
+.login-card input:focus {
+  border-color: #B79A5B;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #B79A5B;
+  border-radius: 5px;
+  background: #B79A5B;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.login-card form button {
+  margin-top: 4px;
+}
+
+.login-card button:hover {
+  background: #9D8147;
+  border-color: #9D8147;
+}
+
+.login-card > button {
+  margin-top: 14px;
+  background: transparent;
+  color: #9D8147;
+}
+
+.login-card > button:hover {
+  background: #F5F0E6;
+}
+
+.mensagem {
+  margin-top: 15px;
+  color: #A34436;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.login-logo {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 22px;
+  }
+
+  .login-card h1 {
+    font-size: 27px;
+  }
+}
