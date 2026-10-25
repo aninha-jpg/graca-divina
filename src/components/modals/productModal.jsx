@@ -1,7 +1,7 @@
 import ProductForm from "../productForm/productForm";
 import "./productModal.css";
 
-function ProductModal({ onClose }) {
+function ProductModal({ onClose, produtoEdicao = null  }) {
     return (
         <div className="modal-overlay" onClick={onClose}>
             <section
@@ -14,7 +14,9 @@ function ProductModal({ onClose }) {
                 <header className="modal-header">
                     <div>
                         <p className="panel-eyebrow">DIVINA GRAÇA</p>
-                        <h2 id="modal-title">Novo produto</h2>
+                        <h2 id="modal-title">
+                            {produtoEdicao ? "Editar produto" : "Novo produto"}
+                        </h2>
                     </div>
 
                     <button
@@ -28,10 +30,14 @@ function ProductModal({ onClose }) {
                 </header>
 
                 <p className="modal-description">
-                    Preencha as informações para cadastrar um produto.
-                </p>
+                    {produtoEdicao
+                        ? "Altere as informações do produto." : "Preencha as informações para cadastrar um produto."}
+                    </p>
 
-                <ProductForm onClose={onClose} />
+                <ProductForm
+                    onClose={onClose}
+                    produtoEdicao={produtoEdicao}
+                    />
             </section>
         </div>
     );

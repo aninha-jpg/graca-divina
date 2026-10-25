@@ -10,6 +10,7 @@ import ProductList from "../../components/productList/productList";
 
 function Panel() {
     const [modalAberto, setModalAberto] = useState(false);
+    const [produtoEdicao, setProdutoEdicao] = useState(null);
     const [produtos, setProdutos] = useState([]);
     const [carregando, setCarregando] = useState(true);
     const [erro, setErro] = useState("");
@@ -59,24 +60,18 @@ function Panel() {
                         <p>Cadastre e organize os produtos da loja.</p>
                     </div>
 
-                    <button
-                        type="button"
-                        onClick={() => setModalAberto(true)}
-                    >
-                        + Novo produto
-                    </button>
+                    <button type="button" onClick={() => { setProdutoEdicao(null); setModalAberto(true);}}> + Novo produto </button>
                 </section>
 
-                <ProductList
-                    produtos={produtos}
-                    carregando={carregando}
-                    erro={erro}
-                />
+                <ProductList produtos={produtos} carregando={carregando} erro={erro} onEditar={(produto) => { setProdutoEdicao(produto); setModalAberto(true);
+                    }}/>
             </section>
 
             {modalAberto && (
-                <ProductModal onClose={() => setModalAberto(false)} />
-            )}
+                <ProductModal onClose={() => { setModalAberto(false); setProdutoEdicao(null); }}
+                    produtoEdicao={produtoEdicao}
+                />
+                )}
         </main>
     );
 }

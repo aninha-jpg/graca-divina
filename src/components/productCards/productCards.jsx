@@ -3,7 +3,7 @@ import "./productCards.css";
 import deleteProduct from "../hook/deleteProduct";
 import ConfirmModal from "../confirmModal/confirmModal";
 
-function ProductCards({ produto }) {
+function ProductCards({ produto, onEditar }) {
 
     const [mostrarModal, setMostrarModal] = useState(false);
     const [carregando, setCarregando] = useState(false);
@@ -53,7 +53,9 @@ function ProductCards({ produto }) {
                 ))}
             </div>
 
-            <button type="button" className="button-delete" onClick={() => setMostrarModal(true)} > Excluir produto </button>
+            <button type="button" className="button-gen" onClick={() => onEditar(produto)} > Editar produto </button>
+
+            <button type="button" className="button-gen" onClick={() => setMostrarModal(true)} > Excluir produto </button>
             {mostrarModal && (
                     <ConfirmModal
                         titulo="Excluir produto?"

@@ -1,7 +1,7 @@
 import ProductCards from "../productCards/productCards";
 import "./productList.css";
 
-function ProductList({ produtos, carregando, erro }) {
+function ProductList({ produtos, carregando, erro, onEditar  }) {
     return (
         <section className="products-list">
             <h2>Produtos cadastrados</h2>
@@ -17,9 +17,7 @@ function ProductList({ produtos, carregando, erro }) {
             {!carregando && !erro && produtos.length > 0 && (
                 <div className="products-grid">
                     {produtos.map((produto) => (
-                        <ProductCards
-                            key={produto.id}
-                            produto={produto}
+                        <ProductCards key={produto.id} produto={produto} onEditar={onEditar}
                         />
                     ))}
                 </div>

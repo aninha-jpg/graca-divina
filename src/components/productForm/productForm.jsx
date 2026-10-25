@@ -3,9 +3,11 @@ import ProductVariations from "../productVariarions/productVariations";
 import ProductFields from "../productFields/productFields";
 import saveProduct from "../hook/saveProduct";
 import useProductForm from "../hook/useProductForm";
+import updateProduct from "../hook/updateProduct";
 import { serverTimestamp } from "firebase/firestore";
+import { useEffect } from "react";
 
-function ProductForm({ onClose }) {
+function ProductForm({ onClose, produtoEdicao = null }) {
   const {
     nome,
     setNome,
@@ -20,8 +22,17 @@ function ProductForm({ onClose }) {
     atualizarTamanho,
     adicionarTamanho,
     removerTamanho,
-    limparFormulario
+    limparFormulario,
+    preencherFormulario
   } = useProductForm();
+
+  useEffect(() => {
+    if (produtoEdicao) {
+      preencherFormulario(produtoEdicao);
+    } else {
+      limparFormulario();
+    }
+  }, [produtoEdicao]);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -38,20 +49,24 @@ function ProductForm({ onClose }) {
 
     try {
       const produto = {
-        nome: nome.trim(),
-        descricao: descricao.trim(),
-        preco: Number(preco),
-        cores: cores.map((cor) => ({
-          nome: cor.nome.trim(),
-          tamanhos: cor.tamanhos.map((tamanho) => ({
-            nome: tamanho.nome.trim(),
-            quantidade: Number(tamanho.quantidade)
+          nome: nome.trim(),
+          descricao: descricao.trim(),
+          preco: Number(preco),
+          cores: cores.map((cor) => ({
+            nome: cor.nome.trim(),
+            tamanhos: cor.tamanhos.map((tamanho) => ({
+              nome: tamanho.nome.trim(),
+              quantidade: Number(tamanho.quantidade)
+            }))
           }))
-        })),
-        criadoEm: serverTimestamp()
-      };
+        };
 
-      await saveProduct(produto);
+      if (produtoEdicao) {
+        await updateProduct(produtoEdicao.id, produto);
+      } else {
+        await saveProduct({...produto, criadoEm: serverTimestamp()
+        });
+      }
 
       limparFormulario();
       onClose();
@@ -92,7 +107,7 @@ function ProductForm({ onClose }) {
         </button>
 
         <button type="submit" className="button-save">
-          Cadastrar produto
+          {produtoEdicao ? "Salvar alterações" : "Cadastrar produto"}
         </button>
       </div>
     </form>

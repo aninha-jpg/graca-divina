@@ -59,21 +59,21 @@
   line-height: 1.6;
 }
 
-.button-delete {
-    margin-top: 16px;
-    padding: 10px 16px;
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    background: white;
-    color: var(--text);
-    font-family: "DM Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+.button-gen {
+  margin-top: 16px;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: white;
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.button-delete:hover {
+.button-gen:hover {
     border-color: var(--gold);
     background: var(--ivory);
     color: var(--gold-hover);

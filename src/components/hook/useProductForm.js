@@ -17,8 +17,7 @@ function useProductForm() {
     }
 
     function adicionarCor() {
-        setCores((atuais) => [
-            ...atuais, { nome: "", tamanhos: [{ nome: "", quantidade: 0 }] }
+        setCores((atuais) => [...atuais, { nome: "", tamanhos: [{ nome: "", quantidade: 0 }] }
         ]);
     }
 
@@ -32,8 +31,7 @@ function useProductForm() {
             atuais.map((cor, i) => {
                 if (i !== indiceCor) return cor;
                 return {
-                    ...cor,
-                    tamanhos: cor.tamanhos.map((tamanho, j) => j === indiceTamanho ? { ...tamanho, [campo]: valor } : tamanho)
+                    ...cor, tamanhos: cor.tamanhos.map((tamanho, j) => j === indiceTamanho ? { ...tamanho, [campo]: valor } : tamanho)
                 };
             })
         );
@@ -43,8 +41,7 @@ function useProductForm() {
         setCores((atuais) =>
             atuais.map((cor, i) =>
                 i === indiceCor
-                    ? {
-                        ...cor, tamanhos: [...cor.tamanhos, { nome: "", quantidade: 0 }] } : cor
+                    ? { ...cor, tamanhos: [...cor.tamanhos, { nome: "", quantidade: 0 }] } : cor
             )
         );
     }
@@ -55,12 +52,23 @@ function useProductForm() {
                 if (i !== indiceCor) return cor;
 
                 return {
-                    ...cor,
-                    tamanhos: cor.tamanhos.filter(
-                        (_, j) => j !== indiceTamanho
-                    )
+                    ...cor, tamanhos: cor.tamanhos.filter( (_, j) => j !== indiceTamanho)
                 };
             })
+        );
+    }
+
+    function preencherFormulario(produto) {
+        setNome(produto.nome || "");
+        setDescricao(produto.descricao || "");
+        setPreco(String(produto.preco ?? ""));
+
+        setCores(
+            produto.cores?.length
+                ? produto.cores.map((cor) => ({
+                    nome: cor.nome || "",
+                    tamanhos: cor.tamanhos?.length ? cor.tamanhos.map((tamanho) => ({nome: tamanho.nome || "", quantidade: Number(tamanho.quantidade) || 0 })): [{ nome: "",quantidade: 0 }]
+                })) : [{ nome: "", tamanhos: [{ nome: "", quantidade: 0 }] }]
         );
     }
 
@@ -86,7 +94,8 @@ function useProductForm() {
         atualizarTamanho,
         adicionarTamanho,
         removerTamanho,
-        limparFormulario
+        limparFormulario,
+        preencherFormulario
     };
 }
 export default useProductForm;
