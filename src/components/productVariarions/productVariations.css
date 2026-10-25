@@ -1,0 +1,70 @@
+.variacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.variacoes h3 {
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.variacoes > p {
+  margin-top: -8px;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--ivory);
+}
+
+.tamanho-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.button-secondary {
+  min-height: 44px;
+  padding: 12px 16px;
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: flex-start;
+  background: white;
+  color: var(--gold-hover);
+}
+
+.button-secondary:hover {
+  background: #f4eee2;
+}
+
+.button-remove {
+  align-self: flex-start;
+  padding: 8px 12px;
+  border: 1px solid #c98a8a;
+  border-radius: 5px;
+  background: transparent;
+  color: #a34b4b;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button-remove:hover {
+  background: #f8eaea;
+}

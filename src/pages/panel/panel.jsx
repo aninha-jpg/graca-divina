@@ -1,36 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { collection, onSnapshot } from "firebase/firestore";
+import { db } from "../../../firebase";
 import "./panel.css";
-import ProductForm from "../../components/productForm/productForm";
+import ProductModal from "../../components/modals/productModal";
+import calcularEstoque from "../../components/utils/calcularEstoque";
+import PanelHeader from "../../components/panelHeader/panelHeader";
+import PanelSummary from "../../components/panelSummary/panelSummary";
+import ProductList from "../../components/productList/productList";
 
 function Panel() {
     const [modalAberto, setModalAberto] = useState(false);
+    const [produtos, setProdutos] = useState([]);
+    const [carregando, setCarregando] = useState(true);
+    const [erro, setErro] = useState("");
+
+    useEffect(() => {
+        const produtosRef = collection(db, "produtos");
+
+        const cancelarInscricao = onSnapshot(
+            produtosRef,
+            (snapshot) => {
+                const listaProdutos = snapshot.docs.map((documento) => ({
+                    id: documento.id,
+                    ...documento.data()
+                }));
+
+                setProdutos(listaProdutos);
+                setCarregando(false);
+                setErro("");
+            },
+            (erro) => {
+                console.error("Erro ao buscar produtos:", erro);
+                setErro("Não foi possível carregar os produtos.");
+                setCarregando(false);
+            }
+        );
+
+            return () => cancelarInscricao();
+        }, []);
+
+        const totalProdutos = produtos.length;
+        const totalEstoque = calcularEstoque(produtos);
 
     return (
         <main className="panel-page">
-            <header className="panel-header">
-                <div>
-                    <p className="panel-eyebrow">GRAÇA DIVINA</p>
-                    <h1>Painel administrativo</h1>
-                    <p className="panel-subtitle">
-                        Gerencie seus produtos e estoque.
-                    </p>
-                </div>
-            </header>
+            <PanelHeader />
 
             <section className="panel-content">
-                <h2>Visão geral</h2>
-
-                <div className="panel-cards">
-                    <article className="panel-card">
-                        <span>Produtos cadastrados</span>
-                        <strong>0</strong>
-                    </article>
-
-                    <article className="panel-card">
-                        <span>Itens em estoque</span>
-                        <strong>0</strong>
-                    </article>
-                </div>
+                <PanelSummary
+                    totalProdutos={totalProdutos}
+                    totalEstoque={totalEstoque}
+                    carregando={carregando}
+                />
 
                 <section className="panel-products">
                     <div>
@@ -45,46 +66,16 @@ function Panel() {
                         + Novo produto
                     </button>
                 </section>
+
+                <ProductList
+                    produtos={produtos}
+                    carregando={carregando}
+                    erro={erro}
+                />
             </section>
 
             {modalAberto && (
-                <div
-                    className="modal-overlay"
-                    onClick={() => setModalAberto(false)}
-                >
-                    <section
-                        className="product-modal"
-                        role="dialog"
-                        aria-modal="true"
-                        aria-labelledby="modal-title"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <header className="modal-header">
-                            <div>
-                                <p className="panel-eyebrow">
-                                    GRAÇA DIVINA
-                                </p>
-
-                                <h2 id="modal-title">Novo produto</h2>
-                            </div>
-
-                            <button
-                                type="button"
-                                className="modal-close"
-                                onClick={() => setModalAberto(false)}
-                                aria-label="Fechar modal"
-                            >
-                                ×
-                            </button>
-                        </header>
-
-                        <p className="modal-description">
-                            Preencha as informações para cadastrar um produto.
-                        </p>
-
-                        <ProductForm onClose={() => setModalAberto(false)} />
-                    </section>
-                </div>
+                <ProductModal onClose={() => setModalAberto(false)} />
             )}
         </main>
     );

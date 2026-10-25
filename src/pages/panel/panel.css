@@ -1,4 +1,3 @@
-
 .panel-page {
   min-height: 100vh;
   padding: 24px 18px;
@@ -7,70 +6,8 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-.panel-header {
-  padding-bottom: 24px;
-  border-bottom: 1px solid var(--border);
-}
-
-.panel-eyebrow {
-  margin: 0 0 10px;
-  color: var(--gold-hover);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-.panel-header h1 {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  font-size: 27px;
-  font-weight: 500;
-}
-
-.panel-subtitle {
-  margin: 8px 0 0;
-  color: var(--text-light);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
 .panel-content {
   padding-top: 26px;
-}
-
-.panel-content h2 {
-  margin: 0 0 16px;
-  font-size: 17px;
-  font-weight: 600;
-}
-
-.panel-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.panel-card {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 18px 14px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-}
-
-.panel-card span {
-  color: var(--text-light);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.panel-card strong {
-  color: var(--gold-hover);
-  font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  font-weight: 500;
 }
 
 .panel-products {
@@ -111,98 +48,14 @@
   background: var(--gold-hover);
 }
 
-/* Fundo sobreposto */
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px;
-    background: rgba(35, 31, 25, 0.55);
-    backdrop-filter: blur(3px);
-}
-
-/* Janela do modal */
-.product-modal {
-    width: 100%;
-    max-width: 600px;
-    max-height: 92vh;
-    overflow-y: auto;
-
-    padding: 22px 18px;
-    background: var(--ivory);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Cabeçalho */
-.modal-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 16px;
-}
-
-.modal-header h2 {
-    color: var(--text);
-    font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-weight: 500;
-}
-
-.modal-close {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    background: white;
-    color: var(--text);
-
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.modal-close:hover {
-    background: var(--border);
-}
-
-.modal-description {
-    margin-top: 16px;
-    color: var(--text-light);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
 @media (min-width: 768px) {
   .panel-page {
     padding: 40px;
-  }
-
-  .panel-header h1 {
-    font-size: 32px;
-  }
-
-  .panel-cards {
-    grid-template-columns: repeat(2, minmax(180px, 240px));
   }
 
   .panel-products {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  }
-  .modal-overlay {
-        padding: 24px;
-    }
-
-    .product-modal {
-        padding: 30px;
   }
 }

@@ -1,0 +1,80 @@
+.product-card {
+  min-width: 0;
+  padding: 20px 16px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.product-card:hover {
+  border-color: var(--gold);
+}
+
+.product-card h3 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.product-card > p {
+  margin: 0 0 16px;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.product-card > strong {
+  display: block;
+  margin: 0 0 20px;
+  color: var(--gold-hover);
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.product-variations {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.product-variations h4 {
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.product-variations p {
+  margin: 5px 0;
+  color: var(--text-light);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.button-delete {
+    margin-top: 16px;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: white;
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.button-delete:hover {
+    border-color: var(--gold);
+    background: var(--ivory);
+    color: var(--gold-hover);
+}

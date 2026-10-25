@@ -1,0 +1,40 @@
+.panel-summary h2 {
+  margin: 0 0 16px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.panel-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.panel-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 14px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.panel-card span {
+  color: var(--text-light);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.panel-card strong {
+  color: var(--gold-hover);
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .panel-cards {
+    grid-template-columns: repeat(2, minmax(180px, 240px));
+  }
+}
