@@ -1,0 +1,120 @@
+
+.ant-drawer .ant-drawer-content {
+    background-color: var(--ivory);
+}
+
+.ant-drawer .ant-drawer-header {
+    background-color: var(--ivory);
+    border-bottom: 1px solid var(--border);
+}
+
+.ant-drawer .ant-drawer-title {
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.ant-drawer .ant-drawer-close {
+    color: var(--gold-hover);
+}
+
+.ant-drawer .ant-drawer-body {
+    background-color: var(--ivory);
+}
+
+.navBarMobile {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5%;
+    background-color: var(--ivory);
+    border-bottom: 1px solid var(--border);
+}
+
+.heroImage {
+    width: 100px;
+    max-width: 75%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.navBarDesktop {
+    display: none;
+}
+
+.mobileLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.mobileLinks a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--text);
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.mobileLinks a:hover {
+    color: var(--gold-hover);
+    background-color: var(--ivory);
+}
+
+@media (min-width: 767px) {
+
+    .navBarMobile {
+        display: none;
+    }
+
+    .navBarDesktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 80px;
+        padding: 5px 5%;
+        background-color: var(--ivory);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navBarDesktop .logo img {
+        display: block;
+        width: 80px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+    }
+
+
+    .navLinks {
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .navLinks a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .navLinks a:hover {
+        color: var(--gold-hover);
+    }
+
+    .navLinks .whatsappButton {
+        color: white;
+    }
+
+    .navLinks .whatsappButton:hover {
+        color: var(--border);
+    }
+}

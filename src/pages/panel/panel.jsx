@@ -7,6 +7,8 @@ import calcularEstoque from "../../components/utils/calcularEstoque";
 import PanelHeader from "../../components/panelHeader/panelHeader";
 import PanelSummary from "../../components/panelSummary/panelSummary";
 import ProductList from "../../components/productList/productList";
+import ProductFilters from "../../components/productFilter/productFilter";
+import useProductFilters from "../../components/hook/useProductFilter";
 
 function Panel() {
     const [modalAberto, setModalAberto] = useState(false);
@@ -43,6 +45,25 @@ function Panel() {
         const totalProdutos = produtos.length;
         const totalEstoque = calcularEstoque(produtos);
 
+        const {
+            busca,
+            setBusca,
+            corSelecionada,
+            setCorSelecionada,
+            tamanhoSelecionado,
+            setTamanhoSelecionado,
+            coresDisponiveis,
+            tamanhosDisponiveis,
+            produtosFiltrados,
+            aplicarFiltros,
+            limparFiltros
+        } = useProductFilters(produtos);
+
+        console.log({
+            total: produtos.length,
+            exibidos: produtosFiltrados.length
+        });
+
     return (
         <main className="panel-page">
             <PanelHeader />
@@ -54,6 +75,19 @@ function Panel() {
                     carregando={carregando}
                 />
 
+                <ProductFilters
+                    busca={busca}
+                    setBusca={setBusca}
+                    corSelecionada={corSelecionada}
+                    setCorSelecionada={setCorSelecionada}
+                    tamanhoSelecionado={tamanhoSelecionado}
+                    setTamanhoSelecionado={setTamanhoSelecionado}
+                    coresDisponiveis={coresDisponiveis}
+                    tamanhosDisponiveis={tamanhosDisponiveis}
+                    aplicarFiltros={aplicarFiltros}
+                    limparFiltros={limparFiltros}
+                />
+
                 <section className="panel-products">
                     <div>
                         <h2>Seus produtos</h2>
@@ -63,8 +97,15 @@ function Panel() {
                     <button type="button" onClick={() => { setProdutoEdicao(null); setModalAberto(true);}}> + Novo produto </button>
                 </section>
 
-                <ProductList produtos={produtos} carregando={carregando} erro={erro} onEditar={(produto) => { setProdutoEdicao(produto); setModalAberto(true);
-                    }}/>
+                <ProductList
+                    produtos={produtosFiltrados}
+                    carregando={carregando}
+                    erro={erro}
+                    onEditar={(produto) => {
+                        setProdutoEdicao(produto);
+                        setModalAberto(true);
+                    }}
+                />
             </section>
 
             {modalAberto && (
