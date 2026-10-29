@@ -1,0 +1,117 @@
+.sizes-order {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 420px;
+  padding: 150px 6% 40px;
+  background-color: #F0E9DC;
+  text-align: center;
+}
+.sizes-order-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+.sizes-order-content h2 {
+  margin-bottom: 12px;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.sizes-order-content p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sizes-order-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.sizes-order-list span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid var(--gold);
+  font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.sizes-order-content .sizes-order-note {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+.sizes-order-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 24px;
+  border: 1px solid var(--gold);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (hover: hover) {
+  .sizes-order-list span:hover,
+  .sizes-order-button:hover {
+    background-color: var(--gold);
+    color: white;
+    border-color: var(--gold);
+  }
+}
+
+@media (min-width: 768px) {
+  .sizes-order {
+    min-height: 480px;
+    padding: 150px 8% 50px;
+  }
+
+  .sizes-order-content h2 {
+    font-size: 36px;
+  }
+
+  .sizes-order-content p {
+    font-size: 14px;
+  }
+
+  .sizes-order-list {
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .sizes-order-list span {
+    min-height: 46px;
+    font-size: 13px;
+  }
+
+  .cta {
+    min-height: 480px;
+    padding: 150px 8% 50px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .sizes-order {
+    padding: 120px 8% 76px;
+  }
+
+  .sizes-order-content h2 {
+    font-size: 42px;
+  }
+
+  .sizes-order-list span {
+    font-size: 14px;
+  }
+}

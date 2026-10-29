@@ -1,0 +1,195 @@
+.shirtsPage {
+    min-height: 100vh;
+    background-color: var(--ivory, #FCFBED);
+    color: var(--text, #33302D);
+}
+
+.shirtsCatalog {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 35px 16px 60px;
+}
+
+.shirtsCatalogHeader {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.shirtsSubtitle {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--gold-hover, #A78645);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.shirtsCatalogHeader h2 {
+    margin: 0;
+    font-size: clamp(26px, 6vw, 36px);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.shirtsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 12px;
+}
+
+.shirtCard {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(180, 155, 105, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.shirtImagePlaceholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #F5F0E6;
+}
+
+.shirtImagePlaceholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.shirtInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 10px 10px;
+}
+
+.shirtInfo h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.shirtInfo .shirtPrice {
+    margin: 0 0 14px;
+    color: var(--gold-hover, #94743B);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.shirtInterestButton {
+    width: 100%;
+    min-height: 40px;
+    margin-top: auto;
+    padding: 10px 6px;
+    border: 1px solid var(--gold, #B49B69);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--text, #33302D);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+@media (min-width: 600px) {
+    .shirtsCatalog {
+        padding: 45px 5% 70px;
+    }
+
+    .shirtsCatalogHeader {
+        margin-bottom: 35px;
+    }
+
+    .shirtsGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 32px 20px;
+    }
+
+    .shirtInfo {
+        padding: 14px 12px 12px;
+    }
+
+    .shirtInfo h3 {
+        font-size: 14px;
+    }
+
+    .shirtInterestButton {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .shirtsCatalog {
+        padding: 60px 6% 90px;
+    }
+
+    .shirtsCatalogHeader {
+        margin-bottom: 40px;
+    }
+
+    .shirtsGrid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 35px 24px;
+    }
+
+    .shirtInfo {
+        padding: 16px 14px 14px;
+    }
+
+    .shirtInfo h3 {
+        font-size: 15px;
+    }
+
+    .shirtInfo .shirtPrice {
+        font-size: 17px;
+    }
+
+    .shirtInterestButton {
+        min-height: 42px;
+        font-size: 12px;
+    }
+
+    .shirtCard:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(68, 53, 29, 0.09);
+    }
+
+    .shirtCard:hover .shirtImagePlaceholder img {
+        transform: scale(1.035);
+    }
+
+    .shirtInterestButton:hover {
+        border-color: var(--gold-hover, #94743B);
+        background-color: var(--gold, #B49B69);
+        color: #FFFFFF;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shirtCard,
+    .shirtImagePlaceholder img,
+    .shirtInterestButton {
+        transition: none;
+    }
+}

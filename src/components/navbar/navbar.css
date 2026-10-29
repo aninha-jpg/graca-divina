@@ -66,6 +66,24 @@
     background-color: var(--ivory);
 }
 
+.navContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navContainer.navVisible {
+    transform: translateY(0);
+}
+
+.navContainer.navHidden {
+    transform: translateY(-100%);
+}
+
+
 @media (min-width: 767px) {
 
     .navBarMobile {
