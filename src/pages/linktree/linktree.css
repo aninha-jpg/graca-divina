@@ -1,0 +1,242 @@
+.linktree-page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  padding: 36px 20px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--ivory);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+.linktree-page *,
+.linktree-page *::before,
+.linktree-page *::after {
+  box-sizing: border-box;
+}
+
+.linktree-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.linktree-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.linktree-logo {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+
+.linktree-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.linktree-header h1 {
+  margin: 0 0 5px;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.linktree-category {
+  margin: 8px 0 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--gold-hover);
+}
+
+.linktree-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 22px 0 16px;
+  color: var(--gold);
+}
+
+.linktree-divider span {
+  width: 42px;
+  height: 1px;
+  background: var(--border);
+}
+
+.linktree-divider .anticon {
+  font-size: 14px;
+}
+
+.linktree-description {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.linktree-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.linktree-button {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border: 1px solid var(--gold);
+  border-radius: 5px;
+  background: var(--gold);
+  color: #FFFFFF;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.linktree-button:focus-visible {
+  outline: 2px solid var(--gold-hover);
+  outline-offset: 4px;
+}
+
+.linktree-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 32px;
+  font-size: 23px;
+}
+
+.linktree-button-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.linktree-button-text strong {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.linktree-button-text small {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.linktree-arrow {
+  flex-shrink: 0;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: transform 0.25s ease;
+}
+
+.linktree-footer {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.linktree-footer > span {
+  font-family: "Playfair Display", serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--gold-hover);
+}
+
+.linktree-footer p {
+  margin: 9px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+@media (min-width: 481px) {
+  .linktree-page {
+    padding: 48px 24px 32px;
+  }
+
+  .linktree-header {
+    margin-bottom: 34px;
+  }
+
+  .linktree-logo {
+    width: 104px;
+    height: 104px;
+  }
+
+  .linktree-header h1 {
+    font-size: 36px;
+  }
+
+  .linktree-description {
+    font-size: 16px;
+  }
+
+  .linktree-button {
+    min-height: 76px;
+    gap: 15px;
+    padding: 15px 17px;
+  }
+
+  .linktree-footer {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 769px) {
+  .linktree-page {
+    align-items: center;
+    padding: 48px 24px;
+  }
+
+  .linktree-button:hover {
+    background: var(--gold-hover);
+    border-color: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(57, 53, 46, 0.10);
+  }
+
+  .linktree-button:hover .linktree-arrow {
+    transform: translate(2px, -2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .linktree-button,
+  .linktree-arrow {
+    transition: none;
+  }
+
+  .linktree-button:hover,
+  .linktree-button:hover .linktree-arrow {
+    transform: none;
+  }
+}

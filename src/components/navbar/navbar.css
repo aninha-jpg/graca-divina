@@ -1,77 +1,9 @@
-
-.ant-drawer .ant-drawer-content {
-    background-color: var(--ivory);
-}
-
-.ant-drawer .ant-drawer-header {
-    background-color: var(--ivory);
-    border-bottom: 1px solid var(--border);
-}
-
-.ant-drawer .ant-drawer-title {
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-}
-
-.ant-drawer .ant-drawer-close {
-    color: var(--gold-hover);
-}
-
-.ant-drawer .ant-drawer-body {
-    background-color: var(--ivory);
-}
-
-.navBarMobile {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 5%;
-    background-color: var(--ivory);
-    border-bottom: 1px solid var(--border);
-}
-
-.heroImage {
-    width: 100px;
-    max-width: 75%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.navBarDesktop {
-    display: none;
-}
-
-.mobileLinks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-.mobileLinks a {
-    display: block;
-    padding: 10px 16px;
-    text-decoration: none;
-    color: var(--text);
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-.mobileLinks a:hover {
-    color: var(--gold-hover);
-    background-color: var(--ivory);
-}
-
 .navContainer {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     z-index: 1000;
+    width: 100%;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -83,9 +15,122 @@
     transform: translateY(-100%);
 }
 
+.navBarMobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 68px;
+    padding: 8px 5%;
+    background-color: var(--ivory);
+    border-bottom: 1px solid var(--border);
+    box-sizing: border-box;
+}
 
-@media (min-width: 767px) {
+.navBarMobile .logo {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
 
+.heroImage {
+    display: block;
+    width: 76px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.navBarMobile .navbar-menu-button.ant-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--gold-hover);
+    font-size: 19px;
+    box-shadow: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.navBarMobile .navbar-menu-button.ant-btn:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: #fff !important;
+}
+
+.site-navbar-drawer .ant-drawer-content,
+.site-navbar-drawer .ant-drawer-header,
+.site-navbar-drawer .ant-drawer-body {
+    background-color: var(--ivory);
+}
+
+.site-navbar-drawer .ant-drawer-header {
+    padding: 22px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.site-navbar-drawer .ant-drawer-title {
+    color: var(--text);
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.site-navbar-drawer .ant-drawer-close {
+    color: var(--gold-hover);
+    transition: color 0.2s ease;
+}
+
+.site-navbar-drawer .ant-drawer-close:hover {
+    color: var(--text);
+}
+
+.site-navbar-drawer .ant-drawer-body {
+    padding: 22px 20px;
+}
+
+.mobileLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobileLinks a {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 14px;
+    border-radius: 7px;
+    color: var(--text-light);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.mobileLinks a:hover {
+    background-color: #fff;
+    color: var(--gold-hover);
+}
+
+.navBarDesktop {
+    display: none;
+}
+
+@media (min-width: 769px) {
     .navBarMobile {
         display: none;
     }
@@ -95,44 +140,89 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        min-height: 80px;
-        padding: 5px 5%;
+        min-height: 82px;
+        padding: 8px 5%;
         background-color: var(--ivory);
         border-bottom: 1px solid var(--border);
+        box-sizing: border-box;
+    }
+
+    .navBarDesktop .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
     }
 
     .navBarDesktop .logo img {
         display: block;
         width: 80px;
+        max-width: 100%;
         height: auto;
         object-fit: contain;
-        border-radius: 10px;
+        border-radius: 8px;
+        transition: opacity 0.2s ease;
     }
 
+    .navBarDesktop .logo:hover img {
+        opacity: 0.85;
+    }
 
     .navLinks {
         display: flex;
         align-items: center;
-        gap: 35px;
+        justify-content: flex-end;
+        gap: 32px;
     }
 
-    .navLinks a {
+    .navLinks > a {
+        position: relative;
+        padding: 8px 0;
         color: var(--text);
-        text-decoration: none;
-        font-size: 16px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 14px;
         font-weight: 500;
-        transition: color 0.3s ease;
+        text-decoration: none;
+        transition: color 0.2s ease;
     }
 
-    .navLinks a:hover {
+    .navLinks > a::after {
+        position: absolute;
+        right: 0;
+        bottom: 2px;
+        left: 0;
+        height: 1px;
+        background-color: var(--gold);
+        content: "";
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+    }
+
+    .navLinks > a:hover {
         color: var(--gold-hover);
+    }
+
+    .navLinks > a:hover::after {
+        transform: scaleX(1);
     }
 
     .navLinks .whatsappButton {
         color: white;
+        padding: 10px;
     }
 
     .navLinks .whatsappButton:hover {
         color: var(--border);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 950px) {
+    .navBarDesktop {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .navLinks {
+        gap: 20px;
     }
 }

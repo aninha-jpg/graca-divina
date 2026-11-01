@@ -19,10 +19,8 @@ function Navbar() {
             if (currentScrollY < 50) {
                 setVisible(true);
             } else if (currentScrollY < lastScrollY.current) {
-
                 setVisible(true);
             } else if (currentScrollY > lastScrollY.current) {
-
                 setVisible(false);
             }
 
@@ -55,16 +53,18 @@ function Navbar() {
                 </div>
             </div>
 
+            {/* Navbar mobile */}
             <div className="navBarMobile">
                 <a href="#home" className="logo">
                     <img
                         className="heroImage"
                         src={Logo}
-                        alt="Logo Divina Graça"
+                        alt="Logo Graça Divina"
                     />
                 </a>
 
                 <Button
+                    className="navbar-menu-button"
                     type="text"
                     aria-label="Abrir menu"
                     icon={<MenuOutlined />}
@@ -75,7 +75,8 @@ function Navbar() {
                 />
 
                 <Drawer
-                    title="Menu"
+                    className="site-navbar-drawer"
+                    title="Graça Divina"
                     placement="right"
                     open={open}
                     onClose={() => setOpen(false)}

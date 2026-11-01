@@ -35,7 +35,7 @@ function ShirtDetailsModal({ shirt, onClose }) {
         </div>
 
         <div className="shirtModalInfo">
-          <span className="shirtModalSubtitle">DIVINA GRAÇA</span>
+          <span className="shirtModalSubtitle">GRAÇA DIVINA</span>
 
           <h2 id="shirtModalTitle">{shirt.nome}</h2>
 

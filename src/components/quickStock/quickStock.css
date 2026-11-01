@@ -1,0 +1,256 @@
+.quick-stock {
+  width: 100%;
+  margin-top: 32px;
+  padding-top: 26px;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+
+.quick-stock-header {
+  margin-bottom: 20px;
+}
+
+.quick-stock-header h2 {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.quick-stock-header p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* Busca */
+.quick-stock-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 46px;
+  margin-bottom: 18px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--text-light);
+}
+
+.quick-stock-search:focus-within {
+  border-color: var(--gold);
+}
+
+.quick-stock-search input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+}
+
+.quick-stock-search input::placeholder {
+  color: var(--text-light);
+}
+
+/* Mensagens */
+.quick-stock-message {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.quick-stock-message.error {
+  border: 1px solid #d9a4a4;
+  background: #fff5f5;
+  color: #9b3030;
+}
+
+.quick-stock-message.success {
+  border: 1px solid #c7d8bd;
+  background: #f4f8f0;
+  color: #42613a;
+}
+
+/* Lista de produtos */
+.quick-stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-stock-product {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.quick-stock-product-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 70px;
+  padding: 15px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.quick-stock-product-toggle:hover {
+  background: var(--ivory);
+}
+
+.quick-stock-product-toggle > .anticon {
+  flex-shrink: 0;
+  color: var(--gold-hover);
+}
+
+.quick-stock-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.quick-stock-product-info strong {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quick-stock-product-info small {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+/* Variações */
+.quick-stock-variations {
+  padding: 0 15px 15px;
+}
+
+.quick-stock-color {
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.quick-stock-color + .quick-stock-color {
+  margin-top: 14px;
+}
+
+.quick-stock-color h3 {
+  margin: 0 0 10px;
+  color: var(--text-light);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.quick-stock-size {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 6px 0;
+}
+
+.quick-stock-size-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.quick-stock-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.quick-stock-adjust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--ivory);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.quick-stock-adjust:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #fff;
+}
+
+.quick-stock-adjust:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.quick-stock-adjust:focus-visible,
+.quick-stock-product-toggle:focus-visible {
+  outline: 2px solid var(--gold-hover);
+  outline-offset: -2px;
+}
+
+.quick-stock-quantity {
+  min-width: 24px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.quick-stock-empty {
+  padding: 20px 8px;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Tablets e telas maiores */
+@media (min-width: 600px) {
+  .quick-stock {
+    margin-top: 38px;
+    padding-top: 30px;
+  }
+
+  .quick-stock-header h2 {
+    font-size: 25px;
+  }
+
+  .quick-stock-product-toggle {
+    padding: 18px;
+  }
+
+  .quick-stock-variations {
+    padding: 0 18px 18px;
+  }
+}
