@@ -51,6 +51,11 @@ function AdminSidebar() {
           <ShoppingOutlined />
           {!recolhida && <span>Produtos</span>}
         </NavLink>
+
+        <NavLink to="/admin/financial" className="admin-sidebar-link">
+          <DollarOutlined/>
+          {!recolhida && <span>Financeiro</span>}
+        </NavLink>
       </nav>
 
       <button

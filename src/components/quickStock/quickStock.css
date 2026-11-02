@@ -25,7 +25,6 @@
   line-height: 1.7;
 }
 
-/* Busca */
 .quick-stock-search {
   display: flex;
   align-items: center;
@@ -59,7 +58,6 @@
   color: var(--text-light);
 }
 
-/* Mensagens */
 .quick-stock-message {
   margin-bottom: 16px;
   padding: 12px 14px;
@@ -81,7 +79,6 @@
   color: #42613a;
 }
 
-/* Lista de produtos */
 .quick-stock-list {
   display: flex;
   flex-direction: column;
@@ -139,7 +136,6 @@
   font-size: 12px;
 }
 
-/* Variações */
 .quick-stock-variations {
   padding: 0 15px 15px;
 }
@@ -235,7 +231,6 @@
   text-align: center;
 }
 
-/* Tablets e telas maiores */
 @media (min-width: 600px) {
   .quick-stock {
     margin-top: 38px;

@@ -15,6 +15,8 @@ function ProductForm({ onClose, produtoEdicao = null }) {
     setDescricao,
     preco,
     setPreco,
+    custo,
+    setCusto,
     cores,
     atualizarCor,
     adicionarCor,
@@ -47,19 +49,25 @@ function ProductForm({ onClose, produtoEdicao = null }) {
       return;
     }
 
+    if (custo === "" || !Number.isFinite(Number(custo)) || Number(custo) < 0) {
+      alert("Informe um custo válido para o produto.");
+      return;
+    }
+
     try {
       const produto = {
-          nome: nome.trim(),
-          descricao: descricao.trim(),
-          preco: Number(preco),
-          cores: cores.map((cor) => ({
+        nome: nome.trim(),
+        descricao: descricao.trim(),
+        preco: Number(preco),
+        custo: Number(custo),
+        cores: cores.map((cor) => ({
             nome: cor.nome.trim(),
             tamanhos: cor.tamanhos.map((tamanho) => ({
-              nome: tamanho.nome.trim(),
-              quantidade: Number(tamanho.quantidade)
+                nome: tamanho.nome.trim(),
+                quantidade: Number(tamanho.quantidade)
             }))
-          }))
-        };
+        }))
+    };
 
       if (produtoEdicao) {
         await updateProduct(produtoEdicao.id, produto);
@@ -85,7 +93,9 @@ function ProductForm({ onClose, produtoEdicao = null }) {
         setDescricao={setDescricao}
         preco={preco}
         setPreco={setPreco}
-      />
+        custo={custo}
+        setCusto={setCusto}
+    />
 
       <ProductVariations
         cores={cores}

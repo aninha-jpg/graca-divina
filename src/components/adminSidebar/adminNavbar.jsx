@@ -73,6 +73,15 @@ function AdminNavbar() {
             <ShoppingOutlined />
             <span>Produtos</span>
           </NavLink>
+
+          <NavLink
+            to="/admin/financial"
+            className="admin-navbar-link"
+            onClick={fecharMenu}
+          >
+            <DollarOutlined />
+            <span>Financeiro</span>
+          </NavLink>
         </nav>
 
         <button

@@ -7,7 +7,6 @@
   font-family: "DM Sans", sans-serif;
 }
 
-/* Área principal */
 .panel-main {
   flex: 1;
   width: 100%;
@@ -15,7 +14,6 @@
   padding: 24px 18px;
 }
 
-/* Conteúdo */
 .panel-content {
   width: 100%;
   max-width: 1200px;
@@ -23,7 +21,6 @@
   padding-top: 12px;
 }
 
-/* Cabeçalho */
 .panel-header {
   margin-bottom: 30px;
 }
@@ -44,7 +41,6 @@
   line-height: 1.7;
 }
 
-/* Mensagem de erro */
 .panel-error {
   padding: 14px 16px;
   border: 1px solid #d9a4a4;
@@ -55,7 +51,7 @@
   line-height: 1.6;
 }
 
-/* Tablets */
+
 @media (min-width: 600px) {
   .panel-main {
     padding: 30px 26px;
@@ -74,7 +70,6 @@
   }
 }
 
-/* Desktop */
 @media (min-width: 769px) {
   .panel-page {
     flex-direction: row;
@@ -84,11 +79,15 @@
     flex: 1;
     width: 0;
     min-width: 0;
-    padding: 36px 32px;
+    padding: 32px;
+    box-sizing: border-box;
   }
 
   .panel-content {
-    padding-top: 20px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-top: 0;
   }
 
   .panel-header {
