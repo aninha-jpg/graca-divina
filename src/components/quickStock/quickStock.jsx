@@ -339,6 +339,12 @@ function QuickStock({ produtos = [] }) {
                 <span className="quick-stock-product-info">
                   <strong>{produto.nome}</strong>
 
+                  {produto.codigo && (
+                    <small className="quick-stock-code">
+                        {produto.codigo}
+                    </small>
+                )}
+
                   {produto.descricao && (
                       <small className="quick-stock-description">
                           {produto.descricao}

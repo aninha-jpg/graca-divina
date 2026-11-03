@@ -33,7 +33,15 @@ function SalesHistory({ vendas, formatarData, formatarMoeda }) {
                 <tr key={venda.id}>
                   <td>{formatarData(venda.criadoEm)}</td>
 
-                  <td>{venda.produtoNome}</td>
+                  <td>
+                  <div className="financial-product-info">
+                    <strong>{venda.produtoNome}</strong>
+
+                    {venda.codigoProduto && (
+                      <small>{venda.codigoProduto}</small>
+                    )}
+                  </div>
+                </td>
 
                   <td>
                     {venda.cor} / {venda.tamanho}

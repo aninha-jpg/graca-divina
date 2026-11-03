@@ -4,7 +4,6 @@ import ProductFields from "../productFields/productFields";
 import saveProduct from "../hook/saveProduct";
 import useProductForm from "../hook/useProductForm";
 import updateProduct from "../hook/updateProduct";
-import { serverTimestamp } from "firebase/firestore";
 import { useEffect } from "react";
 
 function ProductForm({ onClose, produtoEdicao = null }) {
@@ -71,10 +70,9 @@ function ProductForm({ onClose, produtoEdicao = null }) {
 
       if (produtoEdicao) {
         await updateProduct(produtoEdicao.id, produto);
-      } else {
-        await saveProduct({...produto, criadoEm: serverTimestamp()
-        });
-      }
+    } else {
+        await saveProduct(produto);
+    }
 
       limparFormulario();
       onClose();

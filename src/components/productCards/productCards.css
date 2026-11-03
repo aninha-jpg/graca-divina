@@ -78,3 +78,15 @@
     background: var(--ivory);
     color: var(--gold-hover);
 }
+
+.product-code {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: (--text);
+    background-color: (--ivory);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0 12px;
+}

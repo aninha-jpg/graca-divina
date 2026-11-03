@@ -29,6 +29,9 @@ function ProductCards({ produto, onEditar }) {
         <article className="product-card">
             <h3>{produto.nome}</h3>
 
+            <span className="product-code">
+            {produto.codigo}
+            </span>
             <p>{produto.descricao}</p>
 
             <strong>

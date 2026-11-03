@@ -50,8 +50,10 @@ function SaleForm({
 
             {produtos.map((produto) => (
               <option key={produto.id} value={produto.id}>
-                {produto.nome}
-              </option>
+                {produto.codigo
+                ? `${produto.codigo} — ${produto.nome}`
+                : produto.nome}
+            </option>
             ))}
           </select>
         </div>
