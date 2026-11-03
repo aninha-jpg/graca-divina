@@ -160,6 +160,15 @@ export default function useFinancial() {
     [vendasDoMes]
   );
 
+  const faturamentoTotal = useMemo(
+      () =>
+          vendas.reduce(
+              (total, venda) => total + Number(venda.total || 0),
+              0
+          ),
+      [vendas]
+  );
+
   const pecasVendidas = useMemo(
     () =>
       vendasDoMes.reduce(
@@ -416,5 +425,6 @@ export default function useFinancial() {
     setQuantidade,
     setValorUnitario,
     registrarVenda,
+    faturamentoTotal,
   };
 }

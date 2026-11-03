@@ -1,27 +1,35 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
-import Login from './pages/login/login';
-import Panel from './pages/panel/panel';
 import AdminRoute from "./adminRoute";
-import Catalogo from "./pages/catalogo/catalogo";
-import Linktree from "./pages/linktree/linktree";
-import Products from "./pages/products/products";
-import Financial from "./pages/financial/financial";
 
+const Login = lazy(() => import("./pages/login/login"));
+const Panel = lazy(() => import("./pages/panel/panel"));
+const Catalogo = lazy(() => import("./pages/catalogo/catalogo"));
+const Linktree = lazy(() => import("./pages/linktree/linktree"));
+const Products = lazy(() => import("./pages/products/products"));
+const Financial = lazy(() => import("./pages/financial/financial"));
+const NotFound = lazy(() => import("./components/notFound/notFound"));
 
 const Rotas = () => {
-    return(
+    return (
         <BrowserRouter>
-            <Routes>
-                <Route path="/admin/login" element={<Login />} />
-                <Route path="/admin/panel" element={ <AdminRoute> <Panel /> </AdminRoute> } />
-                <Route path="/admin/products" element={ <AdminRoute> <Products /> </AdminRoute> } />
-                <Route path="/admin/financial" element={ <AdminRoute> <Financial /> </AdminRoute> } />
-                <Route path="/" element={<Catalogo />} />
-                <Route path="/linktree" element={<Linktree />} />
-            </Routes>
+            <Suspense fallback={<div>Carregando...</div>}>
+                <Routes>
+                    <Route path="*" element={<NotFound />} />
+                    <Route path="/admin/login" element={<Login />} />
+
+                    <Route path="/admin/panel" element={<AdminRoute><Panel /></AdminRoute>}/>
+
+                    <Route path="/admin/products" element={ <AdminRoute> <Products /> </AdminRoute>}/>
+
+                    <Route path="/admin/financial" element={<AdminRoute> <Financial /> </AdminRoute>}/>
+
+                    <Route path="/" element={<Catalogo />} /> <Route path="/links" element={<Linktree />} />
+                </Routes>
+            </Suspense>
         </BrowserRouter>
-    )
-}
+    );
+};
 
 export default Rotas;

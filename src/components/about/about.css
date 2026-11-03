@@ -27,7 +27,7 @@
     flex-direction: column;
     max-width: 1000px;
     margin: 0 auto;
-    animation: about-appear 0.5s ease;
+    animation: about-appear 1s ease;
 }
 
 .about-image {

@@ -27,6 +27,7 @@ function Financial() {
     totalVenda,
     vendasDoMes,
     faturamentoMes,
+    faturamentoTotal,
     pecasVendidas,
     lucroBrutoMes,
     custosCompletos,
@@ -76,6 +77,7 @@ function Financial() {
 
           <FinancialSummary
             faturamentoMes={faturamentoMes}
+            faturamentoTotal={faturamentoTotal}
             vendasDoMes={vendasDoMes}
             pecasVendidas={pecasVendidas}
             lucroBrutoMes={lucroBrutoMes}

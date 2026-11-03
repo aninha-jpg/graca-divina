@@ -41,22 +41,23 @@
 }
 
 .shirtModalImage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 280px;
-    padding: 12px;
-    overflow: hidden;
-    background-color: #F5F0E6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 280px;
+  padding: 12px;
+  overflow: hidden;
+  background-color: var(--ivory);
 }
 
 .shirtModalImage img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .shirtModalInfo {
@@ -72,9 +73,11 @@
 
 .shirtModalInfo h2 {
   margin: 10px 0;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
   font-weight: 500;
   line-height: 1.3;
+  color: var(--text);
 }
 
 .shirtModalDescription {
@@ -101,6 +104,64 @@
   color: #fff;
   font-size: 13px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shirtModalInterest:hover {
+  background-color: var(--gold-hover);
+}
+
+.shirtCarouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-color: rgba(250, 247, 240, 0.9);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s ease;
+}
+
+.shirtCarouselArrow:hover {
+  background-color: var(--gold);
+  color: #fff;
+}
+
+.shirtCarouselPrev {
+  left: 18px;
+}
+
+.shirtCarouselNext {
+  right: 18px;
+}
+
+.shirtCarouselIndicators {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  gap: 8px;
+}
+
+.shirtCarouselDot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #D8CEBD;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shirtCarouselDot.active {
+  background-color: var(--gold);
 }
 
 @media (min-width: 768px) {
@@ -129,7 +190,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shirtModalInterest {
+  .shirtModalInterest,
+  .shirtCarouselArrow,
+  .shirtCarouselDot {
     transition: none;
   }
 }

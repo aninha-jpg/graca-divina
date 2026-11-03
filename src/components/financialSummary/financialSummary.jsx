@@ -2,6 +2,7 @@ import "./financialSummary.css";
 
 function FinancialSummary({
   faturamentoMes,
+  faturamentoTotal,
   vendasDoMes,
   pecasVendidas,
   lucroBrutoMes,
@@ -10,6 +11,12 @@ function FinancialSummary({
 }) {
   return (
     <section className="financial-summary">
+
+      <article className="financial-card">
+        <span>Faturamento total</span>
+        <strong>{formatarMoeda(faturamentoTotal)}</strong>
+      </article>
+
       <article className="financial-card">
         <span>Faturamento do mês</span>
         <strong>{formatarMoeda(faturamentoMes)}</strong>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button, Drawer } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined, InstagramOutlined } from "@ant-design/icons";
 
 import Logo from "../../assets/logo.jpeg";
 import WhatsAppButton from "../../components/whatsAppButton/whatsAppButton";
@@ -50,10 +50,19 @@ function Navbar() {
                     <a href="#about">Sobre</a>
                     <a href="#contact">Contato</a>
                     <WhatsAppButton texto="WhatsApp" />
+                    <a
+                    href="https://www.instagram.com/use.gracadivina/?hl=pt"
+                    className="instagramButton"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram Graça Divina"
+                    >
+                    <InstagramOutlined />
+                    Instagram
+                </a>
                 </div>
             </div>
 
-            {/* Navbar mobile */}
             <div className="navBarMobile">
                 <a href="#home" className="logo">
                     <img
