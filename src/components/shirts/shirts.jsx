@@ -19,6 +19,7 @@ import shirt14 from "../../assets/shirts/shirt14.jpeg";
 import shirt15 from "../../assets/shirts/shirt15.jpeg";
 import shirt16 from "../../assets/shirts/shirt16.jpeg";
 import shirt17 from "../../assets/shirts/shirt17.jpeg";
+import shirt18 from "../../assets/shirts/shirt18.jpeg";
 
 
 const shirts = [
@@ -134,6 +135,13 @@ const shirts = [
     descricao: "Uma peça delicada e cheia de significado, com a imagem de Nossa Senhora das Graças em destaque, acompanhada da oração “Maria concebida sem pecado, rogai por nós que recorremos a vós”. A ilustração em tons de preto e cinza, combinada à escrita em estilo manuscrito, traz um visual clássico e elegante. Uma camiseta que expressa fé e devoção, perfeita para carregar uma mensagem especial em todos os momentos.",
     preco: 69.90,
     imagem: shirt17,
+  },
+  {
+    id: 17,
+    nome: "T-shirt Nossa Senhora de Fátima",
+    descricao: "uma homenagem à Mãe que apareceu aos três pastorinhos e deixou uma mensagem de oração, conversão e confiança em Deus. Com a frase “Salve Maria”, a estampa expressa nosso amor e devoção a Nossa Senhora, lembrando-nos de recorrer sempre à sua intercessão e permanecer próximos de Jesus. Uma peça para vestir não apenas no corpo, mas como expressão da sua fé, amor e devoção à Nossa Senhora de Fátima.",
+    preco: 69.90,
+    imagem: shirt18,
   },
 ];
 

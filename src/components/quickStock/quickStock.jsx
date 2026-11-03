@@ -336,15 +336,21 @@ function QuickStock({ produtos = [] }) {
                   }
                   aria-expanded={aberto}
                 >
-                  <span className="quick-stock-product-info">
-                    <strong>{produto.nome}</strong>
+                <span className="quick-stock-product-info">
+                  <strong>{produto.nome}</strong>
 
-                    <small>
+                  {produto.descricao && (
+                      <small className="quick-stock-description">
+                          {produto.descricao}
+                      </small>
+                  )}
+
+                  <small>
                       {quantidadeTotal}{" "}
                       {quantidadeTotal === 1 ? "peça" : "peças"}{" "}
                       em estoque
-                    </small>
-                  </span>
+                  </small>
+              </span>
 
                   {aberto ? <UpOutlined /> : <DownOutlined />}
                 </button>
