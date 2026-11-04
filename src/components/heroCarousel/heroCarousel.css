@@ -3,7 +3,7 @@
   display: grid;
   width: 100%;
   overflow: hidden;
-  background: transparent;
+  background: var(--ivory);
 }
 
 .hero-carousel-slides {
@@ -102,5 +102,6 @@
   .hero-carousel-slide,
   .hero-carousel-arrow {
     transition: none;
+    animation: none;
   }
 }
