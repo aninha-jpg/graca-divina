@@ -12,18 +12,14 @@ O projeto foi desenvolvido para atender a uma necessidade real de um comércio l
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Ant Design](https://img.shields.io/badge/Ant_Design-0170FE?style=for-the-badge&logo=antdesign&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
 
 - **React:** desenvolvimento da interface por meio de componentes.
 - **JavaScript:** implementação da lógica e funcionalidades da aplicação.
 - **HTML5:** estruturação do conteúdo.
 - **CSS3:** estilização e responsividade.
-
-### Bibliotecas e ferramentas
-
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Ant Design](https://img.shields.io/badge/Ant_Design-0170FE?style=for-the-badge&logo=antdesign&logoColor=white)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
-
 - **Vite:** ferramenta de desenvolvimento e build da aplicação.
 - **React Router:** gerenciamento de rotas e navegação entre páginas.
 - **Ant Design:** biblioteca de componentes para construção das interfaces administrativas, formulários, tabelas, menus e elementos visuais.
