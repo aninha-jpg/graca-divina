@@ -1,8 +1,5 @@
 import "./linktree.css";
-import {
-  InstagramOutlined,
-  WhatsAppOutlined,
-  ShoppingOutlined,
+import { InstagramOutlined, WhatsAppOutlined, ShoppingOutlined, HeartFilled,
 } from "@ant-design/icons";
 
 import Logo from "../../assets/logo.jpeg";
@@ -46,6 +43,7 @@ function Linktree() {
 
           <div className="linktree-divider">
             <span />
+            <HeartFilled />
             <span />
           </div>
 
