@@ -11,7 +11,7 @@ function Linktree() {
       icon: <ShoppingOutlined />,
       title: "Conheça nossa coleção",
       subtitle: "Encontre sua próxima peça favorita",
-      url: "https://SEU-SITE-AQUI.web.app",
+      url: "https://gracadivina-2d199.web.app/",
     },
     {
         icon: <WhatsAppOutlined />,

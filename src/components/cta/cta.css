@@ -19,6 +19,7 @@
     background-image: var(--cta-banner);
     background-size: cover;
     background-position: center;
+    filter: blur(4px);
     z-index: -2;
 }
 

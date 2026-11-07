@@ -10,7 +10,7 @@ import shirt5 from "../../assets/shirts/shirt5.jpeg";
 import shirt6 from "../../assets/shirts/shirt6.jpeg";
 import shirt7 from "../../assets/shirts/shirt7.jpeg";
 import shirt8 from "../../assets/shirts/shirt8.jpeg";
-import shirt9 from "../../assets/shirts/shirt9.jpeg";
+import shirt9 from "../../assets/shirts/shirt9.jpg";
 import shirt10 from "../../assets/shirts/shirt10.jpeg";
 import shirt11 from "../../assets/shirts/shirt11.jpeg";
 import shirt12 from "../../assets/shirts/shirt12.jpeg";
@@ -42,15 +42,15 @@ const shirts = [
     nome: "T-shirt Sagrada Família",
     descricao: "A Sagrada Família nos ensina que o amor, a união e a fé são os alicerces de um lar verdadeiramente guiado por Deus. Um convite para levar no coração e também vestir no dia a dia o exemplo de Jesus, Maria e José.",
     preco: 69.90,
-    imagem: shirt3,
-    imagemVerso: shirt9,
+    imagem: shirt9,
   },
   {
     id: 4,
     nome: "T-shirt São José e Menino Jesus",
     descricao: "Estampa de São José acolhendo o Menino Jesus em seus braços, representando o amor, o cuidado e a proteção paterna. Uma peça que transmite fé, ternura e devoção à Sagrada Família.",
     preco: 69.90,
-    imagem: shirt4,
+    imagem: shirt3,
+    imagemVerso: shirt4,
   },
   {
     id: 5,
